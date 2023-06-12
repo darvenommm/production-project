@@ -6,6 +6,20 @@ import type { BuildOptions } from './types/config';
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
   const { isDev } = options;
 
+  const svgLoaders = [
+    {
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      resourceQuery: { not: [/url/] },
+      use: ['@svgr/webpack'],
+    },
+    {
+      test: /\.svg$/i,
+      type: 'asset',
+      resourceQuery: /url/,
+    },
+  ];
+
   const sassLoader: RuleSetRule = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -14,12 +28,12 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
         loader: 'css-loader',
         options: {
           modules: {
-            namedExport: true,
-            auto: /\.module\./g,
+            auto: /\.module\.\w+$/i,
             localIdentName: isDev
               ? '[path][name]__[local]--[hash:base64:5]'
               : '[hash:base64:8]',
           },
+          sourceMap: isDev,
         },
       },
       'sass-loader',
@@ -32,5 +46,5 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     exclude: /node_modules/,
   };
 
-  return [sassLoader, typescriptLoader];
+  return [sassLoader, typescriptLoader, ...svgLoaders];
 };

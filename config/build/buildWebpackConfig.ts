@@ -21,7 +21,7 @@ export const buildWebpackConfig = (options: BuildOptions): Configuration => {
     module: {
       rules: buildLoaders(options),
     },
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
     devtool: isDev && 'eval-source-map',
     devServer: isDev ? buildDevServer(options) : undefined,
   };

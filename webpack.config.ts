@@ -12,6 +12,7 @@ export default (env: BuildEnv) => {
     entry: resolve('src', 'index.tsx'),
     build: resolve('dist'),
     html: resolve('public', 'index.html'),
+    src: resolve('src'),
   };
 
   const port = env.port ?? 3000;
