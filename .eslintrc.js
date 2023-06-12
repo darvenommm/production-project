@@ -2,21 +2,25 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
-  extends: ['standard-with-typescript', 'plugin:react/recommended'],
+  extends: [
+    'standard-with-typescript',
+    'plugin:react/recommended',
+    'plugin:i18next/recommended',
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: ['./tsconfig.json'],
   },
-  plugins: ['react'],
+  plugins: ['react', 'i18next'],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
     semi: ['error', 'always'],
     '@typescript-eslint/semi': ['error', 'always'],
     '@typescript-eslint/member-delimiter-style': [
       'error',
-
       {
         multiline: { delimiter: 'semi', requireLast: true },
         singleline: { delimiter: 'semi', requireLast: false },
@@ -29,10 +33,14 @@ module.exports = {
       'error',
       {
         selector: ['variable'],
-        format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+        format: ['strictCamelCase', 'UPPER_CASE', 'StrictPascalCase'],
         trailingUnderscore: 'allowDouble',
         leadingUnderscore: 'allowDouble',
       },
+    ],
+    'i18next/no-literal-string': [
+      'error',
+      { markupOnly: true, onlyAttribute: ['title', 'alt'] },
     ],
   },
 };
