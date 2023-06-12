@@ -1,11 +1,8 @@
 import { useState, useMemo } from 'react';
 
-import {
-  ThemeContext,
-  Theme,
-  LOCAL_STORAGE_THEME_KEY,
-  ThemeContextProps,
-} from 'entities/theme';
+import { ThemeContext, Theme, LOCAL_STORAGE_THEME_KEY } from 'entities/theme';
+
+import type { ThemeContextProps } from 'entities/theme';
 
 interface ThemeProviderProps {
   children: JSX.Element | JSX.Element[];
@@ -21,8 +18,8 @@ export const ThemeProvider = ({
 
   const defaultProps = useMemo<ThemeContextProps>(
     (): ThemeContextProps => ({
-      theme: theme,
-      setTheme: setTheme,
+      theme,
+      setTheme,
     }),
     [theme],
   );

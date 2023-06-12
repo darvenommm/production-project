@@ -5,7 +5,7 @@ import { routesConfig } from 'shared/config/routesConfig';
 
 export const AppRouter = (): JSX.Element => {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<p className="page-wrapper">Loading...</p>}>
       <Routes>
         {Object.values(routesConfig).map(
           ({ path, element }): JSX.Element => (

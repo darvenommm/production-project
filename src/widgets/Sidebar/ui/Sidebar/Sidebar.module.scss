@@ -18,6 +18,19 @@
 
   display: flex;
   justify-content: center;
+  align-items: center;
 
   width: 100%;
+
+  &--collapsed {
+    flex-direction: column;
+  }
+}
+
+.themeSwitcher {
+  margin-right: 20px;
+
+  &--collapsed {
+    margin-right: 0;
+  }
 }

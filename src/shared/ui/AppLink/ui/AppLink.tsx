@@ -1,4 +1,4 @@
-import { Link, LinkProps } from 'react-router-dom';
+import { Link, type LinkProps } from 'react-router-dom';
 
 import { classNames } from 'shared/lib/classNames';
 
@@ -18,9 +18,9 @@ export const AppLink = ({
   to,
   theme = AppLinkTheme.PRIMARY,
   children,
-  className,
+  className = '',
   ...otherProps
-}: AppLinkProps) => {
+}: AppLinkProps): JSX.Element => {
   return (
     <Link
       className={classNames('', {}, [className, cls[theme]])}

@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { Navbar } from 'widgets/Navbar';
 import { AppRouter } from 'app/providers/AppRouter';
 import { useTheme } from 'entities/theme';
@@ -11,11 +13,13 @@ export const App = (): JSX.Element => {
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Navbar />
-      <div className="content-page">
-        <Sidebar />
-        <AppRouter />
-      </div>
+      <Suspense fallback="">
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
+        </div>
+      </Suspense>
     </div>
   );
 };

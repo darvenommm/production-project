@@ -7,7 +7,9 @@ import type {
   BuildEnv,
 } from './config/build/types/config';
 
-export default (env: BuildEnv) => {
+import type { Configuration } from 'webpack';
+
+export default (env: BuildEnv): Configuration => {
   const paths: BuildPaths = {
     entry: resolve('src', 'index.tsx'),
     build: resolve('dist'),

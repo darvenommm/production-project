@@ -3,5 +3,5 @@ export {
   Theme,
   LOCAL_STORAGE_THEME_KEY,
   ThemeContext,
-  ThemeContextProps,
+  type ThemeContextProps,
 } from './model/ThemeContext';
