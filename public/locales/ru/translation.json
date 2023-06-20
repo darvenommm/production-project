@@ -2,5 +2,6 @@
   "change-language": "Изменить язык",
   "main-page-title": "Главная страница",
   "about-page-title": "О сайте",
-  "toggle": "Переключить"
+  "toggle": "Переключить",
+  "not-found-page-title": "Страница не найдена"
 }
