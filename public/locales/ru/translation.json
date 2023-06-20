@@ -3,5 +3,7 @@
   "main-page-title": "Главная страница",
   "about-page-title": "О сайте",
   "toggle": "Переключить",
-  "not-found-page-title": "Страница не найдена"
+  "not-found-page-title": "Страница не найдена",
+  "error-page-title": "На сайте произошла ошибка",
+  "reload-page": "Перезагрузить страницу"
 }

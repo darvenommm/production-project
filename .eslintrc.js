@@ -42,5 +42,6 @@ module.exports = {
       'error',
       { markupOnly: true, onlyAttribute: ['title', 'alt'] },
     ],
+    '@typescript-eslint/space-before-function-paren': 'off',
   },
 };

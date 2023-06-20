@@ -3,5 +3,7 @@
   "main-page-title": "Main Page",
   "about-page-title": "About Page",
   "toggle": "Toggle",
-  "not-found-page-title": "Page not found"
+  "not-found-page-title": "Page not found",
+  "error-page-title": "There is error on the site",
+  "reload-page": "Reload page"
 }

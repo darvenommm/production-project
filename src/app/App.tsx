@@ -1,10 +1,12 @@
 import { Suspense } from 'react';
 
-import { Navbar } from 'widgets/Navbar';
+import { ErrorBoundary } from './providers/ErrorBoundary';
 import { AppRouter } from 'app/providers/AppRouter';
+
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 import { useTheme } from 'entities/theme';
 import { classNames } from 'shared/lib/classNames';
-import { Sidebar } from 'widgets/Sidebar';
 
 import './styles/index.scss';
 
@@ -14,11 +16,13 @@ export const App = (): JSX.Element => {
   return (
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
-        <Navbar />
-        <div className="content-page">
-          <Sidebar />
-          <AppRouter />
-        </div>
+        <ErrorBoundary>
+          <Navbar />
+          <div className="content-page">
+            <Sidebar />
+            <AppRouter />
+          </div>
+        </ErrorBoundary>
       </Suspense>
     </div>
   );
