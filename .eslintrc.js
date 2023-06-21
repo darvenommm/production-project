@@ -1,3 +1,5 @@
+const { resolve } = require('path');
+
 module.exports = {
   env: {
     browser: true,
@@ -40,8 +42,20 @@ module.exports = {
     ],
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, onlyAttribute: ['title', 'alt'] },
+      {
+        markupOnly: true,
+        onlyAttribute: ['title', 'alt'],
+      },
     ],
     '@typescript-eslint/space-before-function-paren': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
   },
+  overrides: [
+    {
+      files: ['**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };

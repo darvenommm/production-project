@@ -22,11 +22,14 @@ export const Sidebar = ({ className = '' }: SidebarProps): JSX.Element => {
 
   return (
     <div
+      data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapse]: collapsed }, [
         className,
       ])}
     >
-      <button onClick={buttonClickHandler}>{t('toggle')}</button>
+      <button data-testid="sidebar-toggle" onClick={buttonClickHandler}>
+        {t('toggle')}
+      </button>
       <div
         className={classNames(cls.switchers, {
           [cls['switchers--collapsed']]: collapsed,
