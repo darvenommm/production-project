@@ -1,5 +1,4 @@
 const { resolve } = require('path');
-
 module.exports = {
   env: {
     browser: true,
@@ -10,6 +9,7 @@ module.exports = {
     'standard-with-typescript',
     'plugin:react/recommended',
     'plugin:i18next/recommended',
+    'plugin:storybook/recommended',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -24,8 +24,14 @@ module.exports = {
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
-        multiline: { delimiter: 'semi', requireLast: true },
-        singleline: { delimiter: 'semi', requireLast: false },
+        multiline: {
+          delimiter: 'semi',
+          requireLast: true,
+        },
+        singleline: {
+          delimiter: 'semi',
+          requireLast: false,
+        },
         multilineDetection: 'brackets',
       },
     ],
@@ -49,6 +55,7 @@ module.exports = {
     ],
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
   },
   overrides: [
     {

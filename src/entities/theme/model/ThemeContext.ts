@@ -12,6 +12,7 @@ export interface ThemeContextProps {
 
 export const ThemeContext = createContext<ThemeContextProps>({
   theme: Theme.LIGHT,
+  // The real setTheme will be setting from Provider.value
   setTheme: () => {},
 });
 

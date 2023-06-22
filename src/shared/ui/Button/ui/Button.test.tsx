@@ -12,7 +12,7 @@ describe('UI Button', () => {
   test('check default button theme', () => {
     render(<Button>Button</Button>);
 
-    expect(screen.getByText('Button')).toHaveClass('clear');
+    expect(screen.getByText('Button')).toHaveClass('default');
   });
 
   test('check not default button theme', () => {
